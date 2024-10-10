@@ -47,7 +47,7 @@ function timer(){
     if (seconds == 30) {
         timerSeconds.innerHTML = 'Inserisci i numeri negli input';
         timerSeconds.innerHTML = aggiungiInput();
-        numbers.classList.add("d-none");
+        numbers.innerHTML = '';
         clearInterval(clock);
     }else {
         timerSeconds.innerHTML = seconds;
@@ -55,6 +55,7 @@ function timer(){
     }
 }
 
+//creo la funzione per aggiungere gli input
 function aggiungiInput() {
     
     for (let i = 0; i < 5; i++){
