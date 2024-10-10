@@ -76,20 +76,25 @@ function aggiungiInput() {
 let button = document.getElementById('button');
 console.log(button);
 
+//aggiungo un evento al bottone
 button.addEventListener('click', ()=>{
 let input = document.querySelectorAll('.input');
 let newArr = [];
+let message = '';
 let counter = 0;
 
+//ciclo i valori degli input
 for (let i = 0; i < input.length; i++) {
     let element = Number(input[i].value)
     if(arr.includes(element)){
         counter++
         newArr.push(element);
-    
+        message = `Complimenti, hai indovinato ${counter} numero/i: ${newArr.join(", ")}`
+    }else{
+        message = 'Non hai indovinato nessun numero'
     }
-    console.log(newArr);
+    
     
 }
-
+console.log(counter, newArr, message);
 })
