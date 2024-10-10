@@ -47,8 +47,11 @@ let clock = setInterval(timer, 1000)
 function timer(){
     if (seconds == 30) {
         timerSeconds.innerHTML = 'Inserisci i numeri negli input';
-        timerSeconds.innerHTML = aggiungiInput();
+        //eseguo la funzione aggiungiInput
+        aggiungiInput();
+        //rimuovo i numeri
         numbers.innerHTML = '';
+        //interrompo il setInterval
         clearInterval(clock);
     }else {
         timerSeconds.innerHTML = seconds;
