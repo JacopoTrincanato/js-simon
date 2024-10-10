@@ -12,7 +12,16 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"*/
 
 
+let arr = [];
+//Creo una funzione che mi permetta di visualizzare in pagina 5 numeri casuali
+function getRandomNumber(min, max){
+    
+    for (let i = 0; arr.length < 5; i++){
 
+        arr.push(Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+    return arr
+}
 
 //creo una variabile dove contenere i numeri generati
 let randomNumbers = getRandomNumber(1, 100);
@@ -23,16 +32,6 @@ let numbers = document.getElementById('numbers');
 
 numbers.innerHTML = randomNumbers;
 
-
-//Creo una funzione che mi permetta di visualizzare in pagina 5 numeri casuali
-function getRandomNumber(min, max){
-    let arr = [];
-    for (let i = 0; i < 5; i++){
-
-        arr.push(Math.floor(Math.random() * (max - min + 1)) + min);
-    }
-    return arr
-}
 
 //prendo l'elemento in cui inserirò i secondi del timer nell'html con getElementById
 
@@ -70,4 +69,12 @@ function aggiungiInput() {
     }
     
     
+}
+
+//verifico se i numeri inseriti negli input corrispondono a quelli generati
+let newArr = [];
+newArr.push(newInput.value)
+let isANnumber = false;
+if(newArr.includes(arr[i])){
+    isANnumber = true;
 }
