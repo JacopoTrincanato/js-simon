@@ -18,7 +18,7 @@ console.log(numbers);
 //Creo una funzione che mi permetta di visualizzare in pagina 5 numeri casuali
 function getRandomNumber(min, max){
     let arr = [];
-    for (var i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++){
 
         arr.push(Math.floor(Math.random() * (max - min + 1)) + min);
     }
