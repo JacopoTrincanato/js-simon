@@ -37,8 +37,19 @@ function getRandomNumber(min, max){
 //prendo l'elemento in cui inserirò i secondi del timer nell'html con getElementById
 
 let timerSeconds = document.getElementById('timer');
-let seconds = 30;
+let seconds = 1;
 
 //creo una variabile dove inserire il timing
 let clock = setInterval(timer, 1000)
 
+//creo la funzione timer
+function timer(){
+    if (seconds == 30) {
+        timerSeconds.innerHTML = ;
+        numbers.classList.add("d-none");
+        clearInterval(clock);
+    }else {
+        timerSeconds.innerHTML = seconds;
+        seconds++
+    }
+}
