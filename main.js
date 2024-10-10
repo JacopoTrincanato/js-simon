@@ -11,7 +11,7 @@ Dividete in piccoli problemi la consegna.
 Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"*/
 
-
+//creo un array vuoto
 let arr = [];
 //Creo una funzione che mi permetta di visualizzare in pagina 5 numeri casuali
 function getRandomNumber(min, max){
@@ -30,12 +30,14 @@ console.log(randomNumbers);
 //prendo l'elemento in cui inserirò i numeri nell'html con getElementById
 let numbers = document.getElementById('numbers');
 
+//inserisco i numeri generati nell'html
 numbers.innerHTML = randomNumbers;
 
 
 //prendo l'elemento in cui inserirò i secondi del timer nell'html con getElementById
 
 let timerSeconds = document.getElementById('timer');
+//creo una variabile con il valore da cui il timer parte a contare
 let seconds = 1;
 
 //creo una variabile dove inserire il timing
@@ -58,14 +60,19 @@ function timer(){
 function aggiungiInput() {
     
     for (let i = 0; i < 5; i++){
+        //creo l'input
         let newInput = document.createElement("input");
-
+        //creo il tipo di input
         newInput.type = "text";
+        //assegno un nome all'input
         newInput.name = "newInput";
+        //assegno un placeholder all'input
         newInput.placeholder = "Inserisci il numero";
+        //assegno una classe all'input
         newInput.classList.add("input");
-    
+        //prendo il container tramite id
         let container = document.getElementById("inputContainer");
+        //assegno al container l'input come figlio
         container.appendChild(newInput);
     }
     
@@ -74,27 +81,30 @@ function aggiungiInput() {
 
 //verifico se i numeri inseriti negli input corrispondono a quelli generati
 let button = document.getElementById('button');
-console.log(button);
 
 //aggiungo un evento al bottone
 button.addEventListener('click', ()=>{
-let input = document.querySelectorAll('.input');
-let newArr = [];
-let message = '';
-let counter = 0;
+    //seleziono tutti gli input con classe 'input'
+    let input = document.querySelectorAll('.input');
+    //creo un nuovo array vuoto
+    let newArr = [];
+    //creo una variabile message che mostrerà quanti e quali numeri l'utente ha indovinato
+    let message = '';
+    //creo una variabile contatore 
+    let counter = 0;
 
-//ciclo i valori degli input
-for (let i = 0; i < input.length; i++) {
-    let element = Number(input[i].value)
-    if(arr.includes(element)){
-        counter++
-        newArr.push(element);
-        message = `Complimenti, hai indovinato ${counter} numero/i: ${newArr.join(", ")}`
-    }else{
-        message = 'Non hai indovinato nessun numero'
+    //ciclo i valori degli input
+    for (let i = 0; i < input.length; i++) {
+        let element = Number(input[i].value)
+        if(arr.includes(element)){
+            counter++
+            newArr.push(element);
+            message = `Complimenti, hai indovinato ${counter} numero/i: ${newArr.join(", ")}`
+        }else{
+            message = 'Non hai indovinato nessun numero'
+        }
+        
+        
     }
-    
-    
-}
-console.log(counter, newArr, message);
+    console.log(counter, newArr, message);
 })
