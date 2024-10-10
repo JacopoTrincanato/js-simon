@@ -45,11 +45,28 @@ let clock = setInterval(timer, 1000)
 //creo la funzione timer
 function timer(){
     if (seconds == 30) {
-        timerSeconds.innerHTML = ;
+        timerSeconds.innerHTML = 'Inserisci i numeri negli input';
+        timerSeconds.innerHTML = aggiungiInput();
         numbers.classList.add("d-none");
         clearInterval(clock);
     }else {
         timerSeconds.innerHTML = seconds;
         seconds++
     }
+}
+
+function aggiungiInput() {
+    
+    for (let i = 0; i < 5; i++){
+        let newInput = document.createElement("input");
+
+        newInput.type = "text";
+        newInput.name = "newInput";
+        newInput.placeholder = "Inserisci il numero";
+    
+        let container = document.getElementById("inputContainer");
+        container.appendChild(newInput);
+    }
+    
+    
 }
