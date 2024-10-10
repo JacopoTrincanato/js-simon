@@ -63,6 +63,7 @@ function aggiungiInput() {
         newInput.type = "text";
         newInput.name = "newInput";
         newInput.placeholder = "Inserisci il numero";
+        newInput.classList.add("input");
     
         let container = document.getElementById("inputContainer");
         container.appendChild(newInput);
@@ -72,9 +73,23 @@ function aggiungiInput() {
 }
 
 //verifico se i numeri inseriti negli input corrispondono a quelli generati
+let button = document.getElementById('button');
+console.log(button);
+
+button.addEventListener('click', ()=>{
+let input = document.querySelectorAll('.input');
 let newArr = [];
-newArr.push(newInput.value)
-let isANnumber = false;
-if(newArr.includes(arr[i])){
-    isANnumber = true;
+let counter = 0;
+
+for (let i = 0; i < input.length; i++) {
+    let element = Number(input[i].value)
+    if(arr.includes(element)){
+        counter++
+        newArr.push(element);
+    
+    }
+    console.log(newArr);
+    
 }
+
+})
